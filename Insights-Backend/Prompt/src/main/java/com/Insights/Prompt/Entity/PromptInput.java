@@ -30,5 +30,7 @@ public class PromptInput {
 	private String format;
 
 	private String tone;
+	
+	private String prompt;
 
 }
