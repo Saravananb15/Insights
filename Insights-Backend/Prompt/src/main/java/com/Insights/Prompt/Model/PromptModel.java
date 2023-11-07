@@ -7,7 +7,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class PromptInput {
+public class PromptModel {
 	private String task;
 	private String context;
 	private String examplers;
