@@ -52,19 +52,18 @@ public class PromptServiceImpl implements PromptService {
 	private String buildPrompt(PromptModel promptInput) {
 		StringBuilder promptBuilder = new StringBuilder();
 
-		promptBuilder.append(promptInput.getTask()).append(" a ");
-		if (validate(promptInput.getExamplers())) {
-			promptBuilder.append(promptInput.getExamplers()).append(" ");
-		}
+		promptBuilder.append(promptInput.getTask()).append(" ");		
 		promptBuilder.append(promptInput.getContext()).append(" ");
 
 		
-		
+		if (validate(promptInput.getExamplers())) {
+			promptBuilder.append(promptInput.getExamplers()).append(" ");
+		}
 		if (validate(promptInput.getPersona())) {
-			promptBuilder.append("to ").append(promptInput.getPersona()).append(" ");
+			promptBuilder.append(promptInput.getPersona()).append(" ");
 		}
 		
-		promptBuilder.append("in ").append(promptInput.getFormat()).append(" format ");
+		promptBuilder.append(promptInput.getFormat()).append(" format ");
 		
 		if (validate(promptInput.getTone())) {
 			promptBuilder.append(promptInput.getTone());
